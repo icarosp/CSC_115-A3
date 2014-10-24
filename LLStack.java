@@ -33,7 +33,7 @@ public class LLStack<T> implements Stack<T>{
 
 	public T pop() throws StackEmptyException{
 		if(empty()){
-			throw new StackEmptyException("Stack empty");
+			throw new StackEmptyException("");
 		}
 		T temp = peek();
 		top = top.getNext();
@@ -43,7 +43,7 @@ public class LLStack<T> implements Stack<T>{
 
 	public T peek() throws StackEmptyException{
 		if(empty()){
-			throw new StackEmptyException("Stack empty");
+			throw new StackEmptyException("");
 		}
 		return top.getInfo();
 	}

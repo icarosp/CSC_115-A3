@@ -16,7 +16,7 @@ public class PrefixCalculator{
 						poppedvalue = stack.pop();
 						operator = stack.pop();
 						if(isOperator(operator) == false) //if last popped is not an operator
-							throw new NumberFormatException("invalid expression");
+							throw new NumberFormatException("");
 						value = doCalculus(poppedvalue, operator, value);
 					}
 					stack.push(value);
@@ -26,11 +26,11 @@ public class PrefixCalculator{
 				System.out.println(stack.pop());
 			}
 			else{
-				throw new NumberFormatException("invalid expression");
+				throw new NumberFormatException("");
 			}
 		}
-		catch(Exception e){
-			System.out.println(e);
+		catch(StackEmptyException|NumberFormatException e){
+			System.out.println("invalid expression");
 		}
 	}
 
