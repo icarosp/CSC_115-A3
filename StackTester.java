@@ -38,7 +38,7 @@ public class StackTester
 	public static void testTwo (Stack<Integer> s)
 	{
 		try
-		{		
+		{	
 			for (int i = 0; i < 100; i++)
 			{
 				s.push(i);
@@ -82,8 +82,8 @@ public class StackTester
 	public static void main (String args[])
 	{
 		Stack<Integer> s1 = new LLStack<Integer>();
-		Stack<Integer> s2 = new ArrayStack<Integer>();
-		Stack<Integer> s3 = new ArrayStack<Integer>();
+		Stack<Integer> s2 = new LLStack<Integer>();
+		Stack<Integer> s3 = new LLStack<Integer>();
 		
 		testOne(s1);
 		testTwo(s2);

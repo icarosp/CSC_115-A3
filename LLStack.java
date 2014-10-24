@@ -5,7 +5,7 @@ public class LLStack<T> implements Stack<T>{
 
 	public LLStack(){
 		this.top = null;
-		this.counter = 0;
+		this.count = 0;
 	}
 
 	public int size(){
@@ -13,22 +13,43 @@ public class LLStack<T> implements Stack<T>{
 	}
 
 	public boolean empty(){
-		if(counter == 0)
+		if(this.count == 0)
 			return true;
 		else
 			return false;
 	}
+
 	public void push (T element){
+		Node<T> n = new Node<T>(element);
+		if(count == 0){
+			top = n;
+		}
+		else{
+			n.setNext(top);
+			top = n;
+		}
+		this.count++;
+		System.out.println("push dado");
 	}
 
 	public T pop() throws StackEmptyException{
-		throw new StackEmptyException("Stack empty");
+		if(empty()){
+			throw new StackEmptyException("Stack empty");
+		}
+		T temp = peek();
+		top = top.getNext();
+		count--;
+		return temp;
 	}
 
 	public T peek() throws StackEmptyException{
-		throw new StackEmptyException("Stack empty");
+		if(empty()){
+			throw new StackEmptyException("Stack empty");
+		}
+		return top.getInfo();
 	}
 
 	public void makeEmpty(){
+		top = null;
 	}
 }
