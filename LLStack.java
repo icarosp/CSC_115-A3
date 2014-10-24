@@ -29,7 +29,6 @@ public class LLStack<T> implements Stack<T>{
 			top = n;
 		}
 		this.count++;
-		System.out.println("push dado");
 	}
 
 	public T pop() throws StackEmptyException{
