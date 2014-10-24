@@ -13,8 +13,11 @@ public class PrefixCalculator{
 				}
 				else{ //we know value is a operand
 					while(stack.empty() == false && isOperator(stack.peek()) == false){ //stack not empty AND top of stack is not an operator
+						//System.out.println("entrou aqui");
 						poppedvalue = stack.pop();
+						//System.out.println("Popped:" +poppedvalue);
 						operator = stack.pop();
+						//System.out.println("Popped:" +operator);
 						if(isOperator(operator) == false) //if last popped is not an operator
 							throw new NumberFormatException("invalid expression");
 						value = doCalculus(poppedvalue, operator, value);
@@ -23,7 +26,7 @@ public class PrefixCalculator{
 				}	
 			}
 			if(stack.size() == 1){
-				System.out.println(stack.pop());
+				System.out.println("Result: "+stack.pop());
 			}
 			else{
 				throw new NumberFormatException("invalid expression");
@@ -59,6 +62,7 @@ public class PrefixCalculator{
 			case "x":	result = aInt * bInt;
 			break;
 		}
+		System.out.println("RESULT" +result);
 		String resultString = Integer.toString(result);
 		return resultString;
 	}
