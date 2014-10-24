@@ -1,26 +1,34 @@
-public class LLStack implements Stack{
-	
-	int size(){
-		return -1;
+public class LLStack<T> implements Stack<T>{
+
+	private Node<T> top;
+	private int count;
+
+	public LLStack(){
+		this.top = null;
+		this.counter = 0;
 	}
 
-	boolean empty(){
-		return false;
+	public int size(){
+		return count;
 	}
 
-	void push(){
-
+	public boolean empty(){
+		if(counter == 0)
+			return true;
+		else
+			return false;
+	}
+	public void push (T element){
 	}
 
-	pop() throws StackEmptyException{
-		return StackEmptyException;
-	} 
-
-	peek() throws StackEmptyException{
-		return StackEmptyException;
+	public T pop() throws StackEmptyException{
+		throw new StackEmptyException("Stack empty");
 	}
 
-	void makeEmpty(){
-		
+	public T peek() throws StackEmptyException{
+		throw new StackEmptyException("Stack empty");
+	}
+
+	public void makeEmpty(){
 	}
 }
